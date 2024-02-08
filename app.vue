@@ -11,7 +11,16 @@
     <LayoutNavbar />
     <section
       class="flex justify-start items-start h-screen w-full bg-theme-bg-secondary"
-    ></section>
+    >
+      <form>
+        <select v-model="locale">
+          <option value="pt-BR">pt-BR</option>
+          <option value="en">en</option>
+          <option value="fr">fr</option>
+        </select>
+        <p>{{ $t("welcome") }}</p>
+      </form>
+    </section>
     <section class="h-screen w-full"></section>
   </main>
 </template>
@@ -21,6 +30,7 @@ import { useThemeStore } from "./stores/themes";
 import type { ThemeType } from "./types";
 
 const store = useThemeStore();
+const { locale } = useI18n();
 
 onMounted(() => {
   const themeFromLocalStorage = localStorage.getItem(

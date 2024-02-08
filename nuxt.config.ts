@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
     "@nuxt/image",
     "@pinia/nuxt",
+    "@nuxtjs/i18n",
   ],
 
   colorMode: {
@@ -15,5 +16,9 @@ export default defineNuxtConfig({
 
   tailwindcss: {
     cssPath: "~/assets/css/main.css",
+  },
+
+  i18n: {
+    vueI18n: "./i18n.config.ts",
   },
 });

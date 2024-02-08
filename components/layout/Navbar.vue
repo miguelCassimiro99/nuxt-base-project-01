@@ -7,7 +7,7 @@
         to="#"
         class="text-theme-text hover:text-primary transition-all text-sm"
       >
-        About
+        {{ $t("about") }}
       </NuxtLink>
 
       <div class="flex justify-end gap-2 items-center">
@@ -45,9 +45,9 @@
     <header
       class="h-20 md:h-20 w-full flex justify-center items-center shadow-md gap-10 sticky top-0 z-30 bg-theme-bg"
     >
-      <NuxtLink to="#" class="header-menu-link"> Menu </NuxtLink>
+      <NuxtLink to="#" class="header-menu-link"> {{ $t("option") }} </NuxtLink>
 
-      <NuxtLink to="#" class="header-menu-link"> Menu </NuxtLink>
+      <NuxtLink to="#" class="header-menu-link"> {{ $t("option") }} </NuxtLink>
 
       <div>
         <NuxtLink
@@ -64,52 +64,52 @@
         </ClientOnly>
       </div>
 
-      <NuxtLink to="#" class="header-menu-link"> Menu </NuxtLink>
+      <NuxtLink to="#" class="header-menu-link"> {{ $t("option") }} </NuxtLink>
 
-      <NuxtLink to="#" class="header-menu-link"> Menu </NuxtLink>
-    </header>
-
-    <transition
-      name="slide-fade"
-      mode="out-in"
-      class="bg-theme-bg-secondary shadow-xl md:hidden"
-    >
-      <div
-        v-if="isMenuOpen"
-        @click.self="toggleMenu()"
-        class="absolute w-full top-[10vh] h-[40vh] z-10 bg-theme-bg-secondary flex flex-col justify-between p-8"
+      <NuxtLink to="#" class="header-menu-link"> {{ $t("option") }} </NuxtLink>
+      <transition
+        name="slide-fade"
+        mode="out-in"
+        class="bg-theme-bg-secondary shadow-xl md:hidden"
       >
         <div
-          class="flex flex-col justify-evenly items-start h-full gap-2 relative"
+          v-if="isMenuOpen"
+          @click.self="toggleMenu()"
+          class="absolute w-full top-[10vh] h-[40vh] z-10 bg-theme-bg-secondary flex flex-col justify-between p-8"
         >
-          <NuxtLink
-            :to="option.url"
-            v-for="option in menu"
-            :key="option.label"
-            class="font-bold text-theme-text tracking-wide uppercase font-tilt z-20"
+          <div
+            class="flex flex-col justify-evenly items-start h-full gap-2 relative"
           >
-            {{ option.label }}
-          </NuxtLink>
-        </div>
-
-        <div class="flex justify-between w-full">
-          <LayoutThemeSelect />
-
-          <div class="flex justify-center items-center gap-2">
-            <NuxtLink
-              v-for="network in socials"
-              :key="network.icon"
-              :to="network.url"
+            <button
+              v-for="option in menu"
+              :key="option.label"
+              class="font-bold text-theme-text tracking-wide uppercase font-tilt z-20"
+              @click="pushToRouteMobile(option.url)"
             >
-              <Icon
-                :name="network.icon"
-                class="w-7 h-7 text-primary transition-all"
-              />
-            </NuxtLink>
+              {{ $t("option") }}
+            </button>
+          </div>
+
+          <div class="flex justify-between w-full">
+            <LayoutThemeSelect />
+
+            <div class="flex justify-center items-center gap-2">
+              <NuxtLink
+                v-for="network in socials"
+                :key="network.icon"
+                :to="network.url"
+                target="_blank"
+              >
+                <Icon
+                  :name="network.icon"
+                  class="w-7 h-7 text-primary transition-all"
+                />
+              </NuxtLink>
+            </div>
           </div>
         </div>
-      </div>
-    </transition>
+      </transition>
+    </header>
   </div>
 </template>
 <script setup lang="ts">
@@ -155,6 +155,11 @@ const isMenuOpen = ref(false);
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
+};
+
+const pushToRouteMobile = (url: string) => {
+  navigateTo(url);
+  toggleMenu();
 };
 </script>
 <style scoped>
