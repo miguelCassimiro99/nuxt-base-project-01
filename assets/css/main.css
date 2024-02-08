@@ -33,5 +33,13 @@
   --background-secondary: #1e2a3b;
   --primary: #483eff;
   --secondary: #f96559;
-  --text-color: #f9818e;
+  --text-color: #f1f5f9;
+}
+
+.container-align {
+  @apply ml-auto mr-auto px-[5%] w-full max-w-[calc(1368px+10%)]
+}
+
+.header-menu-link {
+  @apply hidden md:block font-semibold text-theme-text hover:text-primary transition-all text-sm
 }
