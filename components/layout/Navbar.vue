@@ -23,10 +23,27 @@
           />
         </NuxtLink>
       </div>
+
+      <ClientOnly>
+        <div
+          class="absolute hidden md:block z-40 p-2 pb-3 right-[15%] shadow-md rounded-md -top-[36px] theme-select-buttons bg-theme-bg"
+        >
+          <div class="relative w-fit">
+            <LayoutThemeSelect />
+
+            <div class="w-fit absolute top-4 left-1 rounded-md border-t-0">
+              <Icon
+                name="material-symbols:arrow-downward-alt"
+                class="h-4 w-4 text-theme-text z-10 animate-bounce opacity-70"
+              />
+            </div>
+          </div>
+        </div>
+      </ClientOnly>
     </div>
 
     <header
-      class="h-20 md:h-20 w-full flex justify-center items-center shadow-md gap-10 sticky top-0 z-40 bg-theme-bg"
+      class="h-20 md:h-20 w-full flex justify-center items-center shadow-md gap-10 sticky top-0 z-30 bg-theme-bg"
     >
       <NuxtLink to="#" class="header-menu-link"> Menu </NuxtLink>
 
@@ -153,5 +170,12 @@ const toggleMenu = () => {
 .slide-fade-leave-to {
   transform: translateY(-100%);
   opacity: 0;
+}
+
+.theme-select-buttons {
+  transition: all ease-out 0.5s;
+}
+.theme-select-buttons:hover {
+  transform: translateY(34px);
 }
 </style>

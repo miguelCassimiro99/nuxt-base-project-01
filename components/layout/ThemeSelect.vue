@@ -34,9 +34,5 @@ const themesList = [
     color: "#0f182a",
   },
 ] as ThemeType[];
-
-const getBgClass = (color: string) => {
-  return `bg-[${color}]`;
-};
 </script>
 <style scoped></style>

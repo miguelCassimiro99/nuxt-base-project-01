@@ -2,21 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* theme-light */
-.theme-light {
-  --background: #f1f5f9
-  --background-secondary: #cbd5e1
-  --primary: #f13223
-  --secondary: #f96559
-  --text-color: #2d2d2d
-}
-
 /* theme-dark */
 .theme-dark {
   --background: #030521;
   --background-secondary: #1e2a3b;
   --primary: #00dc83;
-  --secondary: #f96559;
+  --secondary: #ffffff;
   --text-color: #ffffff;
 }
 
@@ -36,10 +27,19 @@
   --text-color: #f1f5f9;
 }
 
+/* theme-light */
+.theme-light {
+  --background: #f1f5f9;
+  --background-secondary: #cbd5e1;
+  --primary: rgb(238, 60, 60);
+  --secondary: #f96559;
+  --text-color: #2d2d2d;
+}
+
 .container-align {
-  @apply ml-auto mr-auto px-[5%] w-full max-w-[calc(1368px+10%)]
+  @apply ml-auto mr-auto px-[5%] w-full max-w-[calc(1368px+10%)];
 }
 
 .header-menu-link {
-  @apply hidden md:block font-semibold text-theme-text hover:text-primary transition-all text-sm
+  @apply hidden md:block font-semibold text-theme-text hover:text-primary transition-all text-sm;
 }
