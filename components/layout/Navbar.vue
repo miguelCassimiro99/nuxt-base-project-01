@@ -67,49 +67,49 @@
       <NuxtLink to="#" class="header-menu-link"> {{ $t("option") }} </NuxtLink>
 
       <NuxtLink to="#" class="header-menu-link"> {{ $t("option") }} </NuxtLink>
-      <transition
-        name="slide-fade"
-        mode="out-in"
-        class="bg-theme-bg-secondary shadow-xl md:hidden"
+    </header>
+    <transition
+      name="slide-fade"
+      mode="out-in"
+      class="bg-theme-bg-secondary shadow-xl md:hidden"
+    >
+      <div
+        v-if="isMenuOpen"
+        @click.self="toggleMenu()"
+        class="absolute w-full top-20 h-[40vh] z-10 bg-theme-bg-secondary flex flex-col justify-between p-8"
       >
         <div
-          v-if="isMenuOpen"
-          @click.self="toggleMenu()"
-          class="absolute w-full top-[10vh] h-[40vh] z-10 bg-theme-bg-secondary flex flex-col justify-between p-8"
+          class="flex flex-col justify-evenly items-start h-full gap-2 relative"
         >
-          <div
-            class="flex flex-col justify-evenly items-start h-full gap-2 relative"
+          <button
+            v-for="option in menu"
+            :key="option.label"
+            class="font-bold text-theme-text tracking-wide uppercase font-tilt z-20"
+            @click="pushToRouteMobile(option.url)"
           >
-            <button
-              v-for="option in menu"
-              :key="option.label"
-              class="font-bold text-theme-text tracking-wide uppercase font-tilt z-20"
-              @click="pushToRouteMobile(option.url)"
+            {{ $t("option") }}
+          </button>
+        </div>
+
+        <div class="flex justify-between w-full">
+          <LayoutThemeSelect />
+
+          <div class="flex justify-center items-center gap-2">
+            <NuxtLink
+              v-for="network in socials"
+              :key="network.icon"
+              :to="network.url"
+              target="_blank"
             >
-              {{ $t("option") }}
-            </button>
-          </div>
-
-          <div class="flex justify-between w-full">
-            <LayoutThemeSelect />
-
-            <div class="flex justify-center items-center gap-2">
-              <NuxtLink
-                v-for="network in socials"
-                :key="network.icon"
-                :to="network.url"
-                target="_blank"
-              >
-                <Icon
-                  :name="network.icon"
-                  class="w-7 h-7 text-primary transition-all"
-                />
-              </NuxtLink>
-            </div>
+              <Icon
+                :name="network.icon"
+                class="w-7 h-7 text-primary transition-all"
+              />
+            </NuxtLink>
           </div>
         </div>
-      </transition>
-    </header>
+      </div>
+    </transition>
   </div>
 </template>
 <script setup lang="ts">
