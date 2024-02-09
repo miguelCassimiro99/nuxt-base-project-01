@@ -1,75 +1,36 @@
-# Nuxt 3 Minimal Starter
+# Nuxt Bases Project 01
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This project it's a simple template to create a brand new Nuxt app with some modules and components.
 
-## Setup
+## Features 📜
 
-Make sure to install the dependencies:
+- [x]  Navbar responsive with a vertical menu on mobile
+- [x]  Tailwind Themes (you can choose and add different themes inside the main.css)
+- [x]  @nuxt/i18n module - Internalization for your app
+- [x]  Icons
+- [x]  Nuxt Image to handle images in a correctly way
+- [x]  Pinia as state managment
 
-```bash
-# npm
-npm install
+### Tools 🛠️
 
-# pnpm
-pnpm install
+🌐 [Nuxt](https://v3.nuxtjs.org/)
 
-# yarn
-yarn install
+🌐 [Tailwind](https://tailwindcss.com/)
 
-# bun
-bun install
-```
+🌐 [Pinia](https://pinia.vuejs.org/)
 
-## Development Server
+🌐 [@nuxt/i18n](https://i18n.nuxtjs.org/)
 
-Start the development server on `http://localhost:3000`:
+---
 
-```bash
-# npm
-npm run dev
+How does it works 🔍
 
-# pnpm
-pnpm run dev
+- The index page contains a little form to add a description to a new ToDo Item and it have a list with ToDo that are fetched on backend.
+- You can simple add a new ToDo, delete, update and mark as finished. Beside that, you can add a project to a ToDo Item if you want to organize your list by projects or different contexts.
+- Some rules: 
+  - You can't add a ToDo Item if you've already 4 unfinished
+  - You can't add blank description
 
-# yarn
-yarn dev
 
-# bun
-bun run dev
-```
+---
 
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
