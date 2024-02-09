@@ -1,6 +1,7 @@
 # Nuxt Bases Project 01
 
 This project it's a simple template to create a brand new Nuxt app with some modules and components.
+You can see the result [here](https://nuxt-base-project-01.vercel.app/)
 
 ## Features 📜
 
@@ -25,12 +26,7 @@ This project it's a simple template to create a brand new Nuxt app with some mod
 
 How does it works 🔍
 
-- The index page contains a little form to add a description to a new ToDo Item and it have a list with ToDo that are fetched on backend.
-- You can simple add a new ToDo, delete, update and mark as finished. Beside that, you can add a project to a ToDo Item if you want to organize your list by projects or different contexts.
-- Some rules: 
-  - You can't add a ToDo Item if you've already 4 unfinished
-  - You can't add blank description
-
+- Its a just simple layout using a navbar with a menu mobile in vertical, you can choose different themes on the mobile menu or on top of navbar. Then you can chose your currently region to change the language inside the app.
 
 ---
 
